@@ -1,0 +1,566 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* Theme Colors - Light */
+    --primary-color: #6366F1;
+    --accent-color: #3f83f8;
+    --link-color: #2563eb;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --nav-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    --table-header-bg: #f2f2f2;
+    --button-bg: var(--accent-color);
+    --button-text: #ffffff;
+    --process-bg: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    --border: black;
+}
+
+body.dark-mode {
+    /* Theme Colors - Dark */
+    --primary-color: #90caf9;
+    --accent-color: #42a5f5;
+    --link-color: #90caf9;
+    --text-color: #f0f0f0;
+    --background-color: #121212;
+    --section-bg: #1e1e1e;
+    --nav-gradient: linear-gradient(120deg, #2c3e50 0%, #4b79a1 100%);
+    --table-header-bg: #333333;
+    --button-bg: #3a3a3a;
+    --button-text: #ffffff;
+    --process-bg: linear-gradient(120deg, #2c3e50 0%, #4b79a1 100%);
+    --border: white;
+}
+
+
+/* Process Form Section */
+.process {
+    background-image: var(--process-bg);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem;
+    width: 100vw;
+}
+.processHeading {
+    font-size: 2.2rem;
+}
+#fromTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+#algorithmSelect {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 1rem;
+}
+#processCount {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 1rem;
+}
+.arrivalTime,
+.burstTime,
+.quantumTime,
+.priorityOrder,
+.priority {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 1rem;
+}
+.button,
+.process2 {
+    background-color: var(--accent-color);
+    color: white;
+    width: 110px;
+    padding: 0.6rem 0.6rem;
+    border-radius: 0.4rem;
+    border: none;
+    font-size: 1rem;
+}
+.button,
+.process2:hover {
+    background-color: var(--link-color);
+}
+#fromTitle2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.spanProcess {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+@media screen and (max-width: 700px) {
+    .spanProcess {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.result,
+.resultPrint {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100vw;
+}
+
+table,
+th,
+td {
+    border: 1px solid var(--border);
+}
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Gantt Chart Styles */
+.gantt-container {
+    margin: 30px 0;
+    max-width: 75vw;
+    width: 100%;
+    overflow-x: auto;
+}
+.gantt-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.gantt-chart {
+    display: flex;
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.gantt-block {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+.gantt-time-markers {
+    display: flex;
+    position: relative;
+    height: 20px;
+}
+.gantt-time-marker {
+    position: relative;
+    text-align: left;
+}
+.gantt-time-marker-end {
+    position: absolute;
+    right: 0;
+}
+.timeline-container {
+    max-width: 80vw;
+}
+
+#priority-toggle-btn {
+    padding: 0.5rem;
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+}
+.add-btn,
+.remove-btn,
+.add-process-btn,
+.remove-process-btn {
+    padding: 0.6rem;
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+}
+.add-btn:hover,
+.remove-btn:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+#calculate:hover,
+#priority-toggle-btn:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+#context-switch,
+#tq,
+#algo,
+.box {
+    padding: 0.3rem;
+    padding-left: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+/* Comparison Section Styles */
+.compare-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    max-width: 90vw;
+    margin-bottom: 4rem;
+}
+@media screen and (max-width: 1446px) {
+    .compare-container {
+        flex-direction: column;
+    }
+}
+
+.compare-section {
+    flex: 1;
+    min-width: 400px;
+    padding: 1rem;
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 1);
+}
+.compare-section h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#compare-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#compare-algo {
+    padding: 0.3rem;
+    border-radius: 1rem;
+    border: none;
+    margin-left: 1rem;
+}
+
+#compare {
+    margin-left: 1rem;
+}
+
+.final-table {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+/* NavBar */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-image: var(--nav-gradient);
+    transition: background-image 0.3s ease;
+    width: 100vw;
+}
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 10px;
+}
+.logoConatiner {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+.navHead {
+    font-size: 1.2rem;
+}
+.navImg {
+    width: 2rem;
+}
+.navImage {
+    width: 100%;
+}
+.navTag {
+    list-style-type: none;
+}
+.navTag {
+    display: flex;
+    gap: 2rem;
+}
+#tag {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#tag:hover {
+    color: var(--gray);
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Apply dynamic text color */
+.navHead,
+.navTag a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+/* Process Form Section */
+.process {
+    background-image: var(--process-bg);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem;
+}
+.processHeading {
+    font-size: 2.2rem;
+}
+#fromTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+#algorithmSelect {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 1rem;
+}
+#processCount {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 1rem;
+}
+.arrivalTime,
+.burstTime,
+.quantumTime,
+.priorityOrder,
+.priority {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 1rem;
+}
+.button,
+.process2 {
+    background-color: var(--accent-color);
+    color: white;
+    width: 110px;
+    padding: 0.6rem 0.6rem;
+    border-radius: 0.4rem;
+    border: none;
+    font-size: 1rem;
+}
+.button,
+.process2:hover {
+    background-color: var(--link-color);
+}
+#fromTitle2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.spanProcess {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+@media screen and (max-width: 700px) {
+    .spanProcess {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.result,
+.resultPrint {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+table,
+th,
+td {
+    border: 1px solid var(--border);
+}
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Gantt Chart Styles */
+.gantt-container {
+    margin: 30px 0;
+    max-width: 75vw;
+    overflow-x: auto;
+}
+.gantt-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.gantt-chart {
+    display: flex;
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.gantt-block {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+.gantt-time-markers {
+    display: flex;
+    position: relative;
+    height: 20px;
+}
+.gantt-time-marker {
+    position: relative;
+    text-align: left;
+}
+.gantt-time-marker-end {
+    position: absolute;
+    right: 0;
+}
+.timeline-container {
+    max-width: 80vw;
+}
+
+#priority-toggle-btn {
+    padding: 0.5rem;
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+}
+.add-btn,
+.remove-btn,
+.add-process-btn,
+.remove-process-btn {
+    padding: 0.6rem;
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+}
+.add-btn:hover,
+.remove-btn:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+#calculate:hover,
+#priority-toggle-btn:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+#context-switch,
+#tq,
+#algo,
+.box {
+    padding: 0.3rem;
+    padding-left: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+/* Comparison Section Styles */
+.compare-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    max-width: 90vw;
+    margin-bottom: 4rem;
+}
+@media screen and (max-width: 1446px) {
+    .compare-container {
+        flex-direction: column;
+    }
+}
+
+.compare-section {
+    flex: 1;
+    min-width: 400px;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.compare-section h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#compare-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#compare-algo {
+    padding: 0.3rem;
+    border-radius: 1rem;
+    border: none;
+    margin-left: 1rem;
+}
+
+#compare {
+    margin-left: 1rem;
+}
+
+.final-table {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
